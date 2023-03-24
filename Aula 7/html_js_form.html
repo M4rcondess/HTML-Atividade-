@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>
+            Formulário 
+        </title>
+
+        <script type="text/javascript">
+            function Enviar(){
+                var nome = document.getElementByld("formNome");
+                var mensagem = '';
+                if(nome.value !=""){
+                    mensagem = mensagem + ' Agradecemos o contato. \n' + nome.value + ' não deixe de voltar \n ';
+                } 
+
+                var valores =document.getElementsByName("rCidade");
+                for (var i=0<valores.length;i++)
+                {
+                    if (valores[i].cheked)
+                    {
+                        mensagem = mensagem + " " + valores[i].value + ' está selecionado ';
+                    }
+                else
+                {
+                    mensagem = mensagem + " " + valores[i].value + ' não está selecionado ';
+                }
+                }
+                alert (mensagem);
+            }
+        </script>
+    </head>
+    <body>
+        <h1>Exemplo de elementos de um Formulário</h1>
+
+        <form>
+            <label for="formNome">Nome:</label>
+            <input type="text" id="formName" name="formNome" placeholder="Nome Sobrenome" required><br><br>
+            <label for="formEmail">Emil :</label>
+            <input type="email" name="formmEmail" id="formEmail"
+        placeholder="email@email.com" required><br><br>
+
+        <fieldset>
+        <legend> Selecione sua Cidade</legend>
+        <input type ="radio" name="rCidade" id="rCidade" value="Sao Paulo">
+        <label for="rCidade">São Paulo</label><br>
+
+            <input type ="radio" name="rCidade" id="rCidade2" value="Sao Paulo">
+            <label for="rCidade2">Osasco</label><br><br>
+            <input type="submit" id="btnSalvar" onclick="Enviar()" value="Salvar">
+        </fieldset><br>
+
+        <fieldset>
+            <legend>Selecione os meios de transporte utilizados</legend>
+            <input type="checkbox" name="cVeiculo" id="cVeiculo" value="Onibus">
+            <label for="cVeiculo">Ônibus</label><br>
+
+            <input type="checkbox" name="cVeiculo" id="cVeiculo2" value="Trem">
+            <label for="cVeiculo2">Trem</label><br>
+
+            <input type="checkbox" name="cVeiculo" id="cVeiculo3" value="Metro">
+            <label for="cVeiculo2">Metro</label><br>
+        </fieldset><br>
+
+
+        <input type="submit" id="btnSalvar" onclick="Enviar()" value="salvar">
+
+
+        </form>
+
+    </body>
+</html>
